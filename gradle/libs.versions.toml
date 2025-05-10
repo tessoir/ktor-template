@@ -1,0 +1,178 @@
+[versions]
+# Kotlin
+kotlin = "2.1.10"
+kotlinx-datetime = "0.6.0"
+
+# Plugins
+ktor = "2.3.13"
+shadowjar = "8.1.1"
+
+# Database
+h2 = "2.3.232"
+postgres = "42.7.5"
+flyway = "10.18.2"
+exposed = "0.61.0"
+
+# DI
+koin = "3.5.6"
+
+# Logging
+logback = "1.4.14"
+
+# Swagger
+kenerator = "1.4.1"
+jquery = "3.2.1"
+ktor-swagger-ui = "3.5.0"
+swagger-models = "2.2.21"
+
+# Other libraries
+kverify = "2.0.0-rc-2a10"
+
+# Testing
+kotest = "5.9.1"
+mockk = "1.13.13"
+
+[libraries]
+# Kotlin
+kotlin-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+
+# Ktor server core
+ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
+ktor-server-host-common = { module = "io.ktor:ktor-server-host-common-jvm", version.ref = "ktor" }
+ktor-server-netty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktor" }
+
+# Ktor server features
+ktor-server-auth = { module = "io.ktor:ktor-server-auth-jvm", version.ref = "ktor" }
+ktor-server-auth-jwt = { module = "io.ktor:ktor-server-auth-jwt-jvm", version.ref = "ktor" }
+ktor-server-status-pages = { module = "io.ktor:ktor-server-status-pages-jvm", version.ref = "ktor" }
+ktor-server-cors = { module = "io.ktor:ktor-server-cors-jvm", version.ref = "ktor" }
+ktor-server-content-negotiation = { module = "io.ktor:ktor-server-content-negotiation-jvm", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json-jvm", version.ref = "ktor" }
+ktor-server-websockets = { module = "io.ktor:ktor-server-websockets-jvm", version.ref = "ktor" }
+ktor-server-webjars = { module = "io.ktor:ktor-server-webjars-jvm", version.ref = "ktor" }
+
+# Ktor client core
+ktor-client-core = { module = "io.ktor:ktor-client-core-jvm", version.ref = "ktor" }
+ktor-client-apache = { module = "io.ktor:ktor-client-apache-jvm", version.ref = "ktor" }
+
+# Ktor client features
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation-jvm", version.ref = "ktor" }
+
+# Database
+h2 = { module = "com.h2database:h2", version.ref = "h2" }
+postgresql = { module = "org.postgresql:postgresql", version.ref = "postgres" }
+flyway-core = { module = "org.flywaydb:flyway-core", version.ref = "flyway" }
+flyway-database-postgresql = { module = "org.flywaydb:flyway-database-postgresql", version.ref = "flyway" }
+exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed" }
+exposed-jdbc = { module = "org.jetbrains.exposed:exposed-jdbc", version.ref = "exposed" }
+exposed-dao = { module = "org.jetbrains.exposed:exposed-dao", version.ref = "exposed" }
+exposed-kotlin-datetime = { module = "org.jetbrains.exposed:exposed-kotlin-datetime", version.ref = "exposed" }
+
+# DI
+koin-ktor = { module = "io.insert-koin:koin-ktor", version.ref = "koin" }
+koin-logger-slf4j = { module = "io.insert-koin:koin-logger-slf4j", version.ref = "koin" }
+
+# Swagger
+schema-kenerator-core = { module = "io.github.smiley4:schema-kenerator-core", version.ref = "kenerator" }
+schema-kenerator-swagger = { module = "io.github.smiley4:schema-kenerator-swagger", version.ref = "kenerator" }
+schema-kenerator-reflection = { module = "io.github.smiley4:schema-kenerator-reflection", version.ref = "kenerator" }
+jquery = { module = "org.webjars:jquery", version.ref = "jquery" }
+ktor-swagger-ui = { module = "io.github.smiley4:ktor-swagger-ui", version.ref = "ktor-swagger-ui" }
+swagger-models = { module = "io.swagger.core.v3:swagger-models", version.ref = "swagger-models" }
+
+# Logging
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+ktor-call-logging = { module = "io.ktor:ktor-server-call-logging-jvm", version.ref = "ktor" }
+
+# Other libraries
+kverify-core = { module = "io.github.kverify:kverify-core", version.ref = "kverify" }
+kverify-rule-set = { module = "io.github.kverify:kverify-rule-set", version.ref = "kverify" }
+
+# Testing
+ktor-test-host = { module = "io.ktor:ktor-server-test-host-jvm", version.ref = "ktor" }
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+kotest-property = { module = "io.kotest:kotest-property", version.ref = "kotest" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
+shadowjar = { id = "com.github.johnrengelman.shadow", version.ref = "shadowjar" }
+
+[bundles]
+kotlin-libraries = [
+    "kotlin-datetime",
+]
+
+ktor-server-core = [
+    "ktor-server-core",
+    "ktor-server-host-common",
+    "ktor-server-netty",
+]
+
+ktor-server-features = [
+    "ktor-server-auth",
+    "ktor-server-auth-jwt",
+    "ktor-server-status-pages",
+    "ktor-server-cors",
+    "ktor-server-content-negotiation",
+    "ktor-serialization-kotlinx-json",
+    "ktor-server-websockets",
+    "ktor-server-webjars",
+]
+
+ktor-client-core = [
+    "ktor-client-core",
+    "ktor-client-apache",
+]
+
+ktor-client-features = [
+    "ktor-client-content-negotiation",
+]
+
+database = [
+    "h2",
+    "postgresql",
+    "flyway-core",
+    "flyway-database-postgresql",
+    "exposed-core",
+    "exposed-jdbc",
+    "exposed-dao",
+    "exposed-kotlin-datetime",
+]
+
+di = [
+    "koin-ktor",
+    "koin-logger-slf4j",
+]
+
+swagger = [
+    "schema-kenerator-core",
+    "schema-kenerator-swagger",
+    "schema-kenerator-reflection",
+    "jquery",
+    "ktor-swagger-ui",
+    "swagger-models",
+]
+
+logging = [
+    "logback-classic",
+    "ktor-call-logging",
+]
+
+kverify = [
+    "kverify-core",
+    "kverify-rule-set",
+]
+
+testing = [
+    "ktor-test-host",
+    "kotlin-test-junit",
+    "kotest-runner-junit5",
+    "kotest-assertions-core",
+    "kotest-property",
+    "mockk",
+]
